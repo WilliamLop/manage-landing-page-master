@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Manage landing page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <figure class="figure__header">
+        <img src="images/logo.svg" title="Manage" alt="Manage-icon" class="figure__logo">
+      </figure>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
+          <li class="nav__item"><a href="#product" class="nav__link">Product</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About Us</a></li> 
+          <li class="nav__item"><a href="#careers" class="nav__link">Careers</a></li> 
+          <li class="nav__item"><a href="#community" class="nav__link">Community</a></li> 
+        </ul>
+      </nav>
+
+      <a href="#" class="box-model" id="menu">
+        <img src="images/icon-hamburger.svg" title="Menú" class="menu--icon" alt="menu-icon">
+      </a>
+
+      <button class="btn btn-primary" title="Get Started">Get Started</button>
+    </div> 
+  </header>
+
+  <main class="main">
+    <div class="main__container">
+      <div class="bring__content" id="pricing">
+        <figure class="figure__main">
+          <img src="images/illustration-intro.svg" alt="" class="welcome__img">
+        </figure>
+        <div class="bring__info">
+          <h1 class="bring__title">Bring everyone together to build better products.</h1>
+          <p class="bring__paragraph">
+            Manage makes it simple for software teams to plan day-to-day 
+            tasks while keeping the larger team goals in view.
+          </p>
+          <button class="btn btn-secondary"  title="Get Started">Get Started</button>
+          <img src="images/bg-tablet-pattern.svg" alt="" class="bring__img">
+        </div>
+
+      </div>
+
+      <div class="question__grid" id="product">
+        <div class="question">
+          <h1 class="question__title">What’s different about Manage?</h1>
+          <p class="question__paragraph">
+            Manage provides all the functionality your team needs, without 
+            the complexity. Our software is tailor-made for modern digital 
+            product teams. 
+          </p>
+        </div>
+
+        <div class="options">
+          <div class="option__info">
+            <div class="option__title">
+              <p class="option__number">01</p>
+              <p class="option__text">Track company-wide progress</p>
+            </div>
+            <p class="option__paragraph">
+              See how your day-to-day tasks fit into the wider vision. Go from 
+              tracking progress at the milestone level all the way done to the 
+              smallest of details. Never lose sight of the bigger picture again.
+            </p>
+          </div>
+          <div class="option__info">
+            <div class="option__title">
+              <p class="option__number">02</p>
+              <p class="option__text">Advanced built-in reports</p>
+            </div>
+            <p class="option__paragraph">
+              Set internal delivery estimates and track progress toward company 
+              goals. Our customisable dashboard helps you build out the reports 
+              you need to keep key stakeholders informed.
+            </p>
+          </div>
+          <div class="option__info">
+            <div class="option__title">
+              <p class="option__number">03</p>
+              <p class="option__text">Everything you need in one place</p>
+            </div>
+            <p class="option__paragraph">
+              Stop jumping from one service to another to communicate, store files, 
+              track tasks and share documents. Manage offers an all-in-one team 
+              productivity solution.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="slide" id="about">
+        <section class="slide__container swiper">
+          <h1 class="slide__title">What they’ve said</h1>
+          <div class="slide__content ">
+            <div class="card__wrapper swiper-wrapper">
+              <div class="card__user swiper-slide ">
+                <img src="images/avatar-anisha.png" title="Anisha Li" alt="user-photo-anisha" class="user__img">
+                <h3 class="user__name">Anisha Li</h3>
+                <p class="user__description">
+                  “Manage has supercharged our team’s workflow. The ability to maintain 
+                  visibility on larger milestones at all times keeps everyone motivated.”
+                </p>
+              </div>
+              <div class="card__user swiper-slide">
+                <img src="images/avatar-ali.png" title="Ali Bravo" alt="user-photo-ali" class="user__img">
+                <h3 class="user__name">Ali Bravo</h3>
+                <p class="user__description">
+                  “We have been able to cancel so many other subscriptions since using 
+                  Manage. There is no more cross-channel confusion and everyone is much 
+                  more focused.”
+                </p>
+              </div>
+              <div class="card__user swiper-slide">
+                <img src="images/avatar-richard.png" title="Richard Watts" alt="user-photo-richard" class="user__img">
+                <h3 class="user__name">Richard Watts</h3>
+                <p class="user__description">
+                  “Manage allows us to provide structure and process. It keeps us organized 
+                  and focused. I can’t stop recommending them to everyone I talk to!”
+                </p>
+              </div>
+              <div class="card__user swiper-slide">
+                <img src="images/avatar-shanai.png" title="Shanai Gough" alt="user-photo-shanai" class="user__img">
+                <h3 class="user__name">Shanai Gough</h3>
+                <p class="user__description">
+                  “Their software allows us to track, manage and collaborate on our projects 
+                  from anywhere. It keeps the whole team in-sync without being intrusive.”
+                </p>
+              </div>
+            </div>
+            <div class="swiper-pagination pag"></div>
+          </div>
+          <div class="swiper-button-next swiper-button-pagination"></div>
+          <div class="swiper-button-prev swiper-button-pagination"></div>
+        </section>
+        <button class="btn btn__three"  title="Get Started">Get Started</button>
+      </div>
+      
+      <div class="simplify" id="careers">
+        <div class="simplify__content">
+          <h1 class="simplify__title">Simplify how your team works today.</h1>
+          <button class="btn btn__white" title="Get Started">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid" id="community">
+      <div class="footer__input">
+        <form action="" class="form" id="form">
+          <input type="email" name="email" id="email" class="email" placeholder="Updates in your inbox…">
+          <input type="submit" id="go" name="go"  title="Go" class="btn go" value="Go">
+          <div class="info__error">
+            <div class="info__content">
+              <img src="images/icons8-error-16.png" class="icon__error" title="error" alt="icon-error">
+              <p class="text__error"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="footer__list">
+        <ul class="ul__list">
+          <li class="list__item"><a href="#" class="list__link">Home</a></li>
+          <li class="list__item"><a href="#" class="list__link">Pricing</a></li>
+          <li class="list__item"><a href="#" class="list__link">Products</a></li>
+          <li class="list__item"><a href="#" class="list__link">About Us</a></li>
+        </ul>
+        <ul class="ul__list">
+          <li class="list__item"><a href="#" class="list__link">Careers</a></li>
+          <li class="list__item"><a href="#" class="list__link">Community</a></li>
+          <li class="list__item"><a href="#" class="list__link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__redes">
+        <img src="images/icon-facebook.svg" title="Facebook" alt="icon-facebook" class="img__red">
+        <img src="images/icon-youtube.svg" title="YouTube" alt="icon-youtube" class="img__red">
+        <img src="images/icon-twitter.svg" title="Twitter" alt="icon-twitter" class="img__red">
+        <img src="images/icon-pinterest.svg" title="Pinterest" alt="icon-pinterest" class="img__red">
+        <img src="images/icon-instagram.svg" title="Instagram" alt="icon-instagram" class="img__red">
+      </div>
+
+      <div class="footer__logo">
+        <img src="images/logo-white.svg" title="Manage" alt="manage-icon" class="logo">
+      </div>
+
+      <div class="footer__copy">
+        <p class="copy__text">Copyright 2020. All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
