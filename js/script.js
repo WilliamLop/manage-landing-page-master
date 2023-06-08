@@ -10,26 +10,63 @@ const button = document.getElementById('go');
 const textError = document.querySelector(".text__error");
 const iconError = document.querySelector(".icon__error");
 const infoError = document.querySelector(".info__error");
-console.log(infoError);
+const navLinks = document.querySelectorAll('.nav a');
+let ubicacionPrincipal = window.pageYOffset;
+
+
+function filters(){
+
+    logo.style.filter = 'blur(0px)';
+    main.style.filter = 'blur(0px)';
+    ilustration.style.filter = 'blur(0px)';
+    footer.style.filter = 'blur(0px)';    
+
+}
 
 // Menu mobile
-menuButton.addEventListener("click", () =>{
+menuButton.addEventListener("click", (e) =>{
 
+    e.preventDefault();
     nav.classList.toggle("nav--active");
 
     if(nav.classList.contains("nav--active")){
-        menuIcon.setAttribute('src', './images/icon-close.svg');
+        if(ubicacionPrincipal > 10){
+            menuIcon.setAttribute('src', './images/icon-close-white.svg');
+        }else{
+            menuIcon.setAttribute('src', './images/icon-close.svg');
+        }
         logo.style.filter = 'blur(2px)';
         main.style.filter = 'blur(2px)';
         ilustration.style.filter = 'blur(2px)';
         footer.style.filter = 'blur(2px)';
     }else{
-        menuIcon.setAttribute('src', './images/icon-hamburger.svg');
-        logo.style.filter = 'blur(0px)';
-        main.style.filter = 'blur(0px)';
-        ilustration.style.filter = 'blur(0px)';
-        footer.style.filter = 'blur(0px)';
+        if (ubicacionPrincipal > 10) {
+            menuIcon.setAttribute('src', './images/icon-hamburger-white.svg');
+        } else {
+            menuIcon.setAttribute('src', './images/icon-hamburger.svg');
+        }
+        filters();
+
+        
     }
+});
+
+console.log(ubicacionPrincipal);
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('nav--active');
+        menuIcon.setAttribute('src', './images/icon-hamburger.svg');
+        filters();
+    });
+    
+    link.addEventListener('mouseover', () => {
+        link.style.color = 'hsl(227, 12%, 61%)';
+    });
+
+    link.addEventListener('mouseout', () => {
+        link.style.color = '';
+    }); 
 });
 
 
@@ -101,10 +138,9 @@ var swiper = new Swiper(".slide__content", {
 
 // Menu interactivo
 
-let ubicacionPrincipal = window.pageYOffset;
-console.log(ubicacionPrincipal);
+window.addEventListener ('scroll', function (e){
 
-window.addEventListener ('scroll', function (){
+    e.preventDefault();
     const desplazamientoActual = window.pageYOffset;
     const navLinks = document.getElementsByClassName('nav__link');
 
@@ -114,16 +150,31 @@ window.addEventListener ('scroll', function (){
         if(ubicacionPrincipal <= 10){
             this.document.getElementsByClassName("header")[0].style.backgroundColor = 'transparent';
             logo.setAttribute('src', './images/logo.svg');
+            menuIcon.setAttribute('src', './images/icon-hamburger.svg');
             for(let i = 0; i < navLinks.length; i++){
                 navLinks[i].style.color = 'hsl(233, 12%, 13%)';
             }
         }
-    }else{
+
+    }
+    else{
+        
         this.document.getElementsByClassName("header")[0].style.top = '-200px';
         this.document.getElementsByClassName("header")[0].style.backgroundColor = 'hsl(233, 12%, 13%)'
+
         logo.setAttribute('src', './images/logo-white.svg');
-        for(let i = 0; i < navLinks.length; i++){
-            navLinks[i].style.color = 'hsl(0, 0%, 98%)';
+        menuIcon.setAttribute('src', './images/icon-hamburger-white.svg');
+
+        if (window.innerWidth <= 700) {
+            // Dispositivo móvil
+            for(let i = 0; i < navLinks.length; i++){
+                navLinks[i].style.color = 'hsl(233, 12%, 13%)';
+            }
+        } else {
+            // Dispositivo no móvil
+            for(let i = 0; i < navLinks.length; i++){
+                navLinks[i].style.color = 'hsl(0, 0%, 98%)';
+            }
         }
     } 
     
@@ -131,4 +182,28 @@ window.addEventListener ('scroll', function (){
 });
 
 
+// Cambio de color para los iconos de las redes sociales
 
+const icons = document.querySelectorAll('.img__red');
+
+icons.forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+        const iconType = icon.getAttribute('alt').split('-')[1];
+        icon.setAttribute('src', `./images/icon-${iconType}-red.svg`);
+    });
+    icon.addEventListener('mouseout', () => {
+        const iconType = icon.getAttribute('alt').split('-')[1];
+        icon.setAttribute('src', `./images/icon-${iconType}.svg`);
+    });
+});
+
+
+window.addEventListener('resize', () =>{
+    const isMenuActive = document.querySelector('.nav--active');
+
+    if(isMenuActive){
+        nav.classList.remove("nav--active");
+        menuIcon.setAttribute('src', './images/icon-hamburger.svg');
+        filters();
+    }
+})

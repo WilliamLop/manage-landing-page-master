@@ -69,6 +69,9 @@ body{
     filter: drop-shadow(2px 2px 8px var(--darkHover));
 
 }
+.nav--desactive{
+    display: none;
+}
 
 .nav--active{
     clip-path: circle(141.2% at 0 100%);
@@ -89,9 +92,7 @@ body{
     transition: color .5s;
 }
 
-.nav__link:hover{
-    color: var(--DarkGrayishBlue);
-}
+
 
 
 .btn-primary{
@@ -323,6 +324,7 @@ body{
     background-color: transparent;
     color: var(--VaryLightGray);
 }
+
 
 /* Estilo el footer */
 
