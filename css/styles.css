@@ -687,7 +687,6 @@ body{
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        /* grid-template-columns: 25% 50% 25%; */
         align-items: start;
         gap: 1rem;
         max-width: 1200px;
@@ -829,6 +828,25 @@ body{
     .question__grid{
         grid-template-columns: 1.25fr 1fr;
     }
+    .bring__content{
+        margin-top: 10rem;
+    }
+    .bring__title{
+        font-size: 3em;
+        max-width: 450px;
+    }
+    .question__title{
+        max-width: 450px;
+        font-size: 2.3em;
+    }
+    .bring__img{
+        width: 1000px;
+        position: absolute;
+        top: 45%;
+        left: -650px;
+        z-index: -1;
+    }
+
 
 }
 @media (min-width: 100rem){
